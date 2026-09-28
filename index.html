@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Para mi Abejita 🐝</title>
+<meta name="theme-color" content="#12060a">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="locked">
+
+<audio id="au" src="assets/music.mp3" loop preload="none"></audio>
+<button id="mus" aria-label="Activar música" aria-pressed="false">🎵</button>
+<div id="lb" hidden role="dialog" aria-modal="true" aria-label="Foto ampliada"><button id="lbx" aria-label="Cerrar">✕</button><figure><img id="lbi" alt=""><figcaption id="lbc"></figcaption></figure></div>
+
+<!-- ETAPA 1 -->
+<section id="intro">
+  <canvas id="fx1" aria-hidden="true"></canvas>
+  <div id="msg" aria-live="polite">
+    <p class="pr in">Hay algo que preparé para ti... ❤️</p>
+    <p class="pr sub in" style="transition-delay:1.6s">Tienes que descubrirlo poquito a poquito.</p>
+  </div>
+  <div id="pw">
+    <button id="pl" aria-label="Toca la planta para descubrir">
+      <svg id="plant" viewBox="0 0 200 290" aria-hidden="true">
+        <defs>
+          <linearGradient id="pg" x1="0" x2="1"><stop offset="0" stop-color="#8e2236"/><stop offset=".5" stop-color="#b8344c"/><stop offset="1" stop-color="#6a1424"/></linearGradient>
+          <radialGradient id="rg" cx=".5" cy=".4"><stop offset="0" stop-color="#e8455b"/><stop offset="1" stop-color="#8a0f26"/></radialGradient>
+        </defs>
+        <path d="M52 228h96l-12 54q-2 6-8 6h-56q-6 0-8-6z" fill="url(#pg)"/>
+        <rect x="44" y="216" width="112" height="16" rx="6" fill="#a02a40"/>
+        <rect x="44" y="216" width="112" height="3" rx="1.5" fill="#d4af6a" opacity=".7"/>
+        <ellipse cx="100" cy="217" rx="48" ry="4" fill="#2b120f"/>
+        <g id="stem"><path d="M100 217C100 180 96 140 100 100" fill="none" stroke="#3f7a4a" stroke-width="5" stroke-linecap="round"/></g>
+        <g id="leaves" fill="#4d9a5b">
+          <path class="lf" data-s="1" style="transform-origin:100px 190px" d="M100 190C88 188 80 180 78 170C90 170 98 178 100 190Z"/>
+          <path class="lf" data-s="1" style="transform-origin:100px 190px" d="M100 190C112 188 120 180 122 170C110 170 102 178 100 190Z"/>
+          <path class="lf" data-s="3" style="transform-origin:99px 168px" d="M99 168C78 164 62 148 60 130C82 130 96 146 99 168Z"/>
+          <path class="lf" data-s="3" style="transform-origin:101px 150px" d="M101 150C122 146 138 130 140 112C118 112 104 128 101 150Z"/>
+          <path class="lf" data-s="4" style="transform-origin:101px 200px" d="M101 200C122 198 136 188 140 174C120 174 104 184 101 200Z"/>
+          <path class="lf" data-s="4" style="transform-origin:99px 138px" d="M99 138C82 136 70 124 68 110C86 110 96 122 99 138Z"/>
+        </g>
+        <g transform="translate(100 100)">
+          <g id="fl">
+            <ellipse cx="0" cy="4" rx="10" ry="5" fill="#3f7a4a"/>
+            <ellipse class="pt" style="--a:-72deg;fill:#7a0c20" cx="0" cy="-16" rx="13" ry="22"/>
+            <ellipse class="pt" style="--a:72deg;fill:#7a0c20" cx="0" cy="-16" rx="13" ry="22"/>
+            <ellipse class="pt" style="--a:-42deg;fill:#a01128" cx="0" cy="-16" rx="13" ry="22"/>
+            <ellipse class="pt" style="--a:42deg;fill:#a01128" cx="0" cy="-16" rx="13" ry="22"/>
+            <ellipse class="pt" style="--a:-16deg;fill:url(#rg)" cx="0" cy="-15" rx="12" ry="21"/>
+            <ellipse class="pt" style="--a:16deg;fill:url(#rg)" cx="0" cy="-15" rx="12" ry="21"/>
+            <ellipse cx="0" cy="-16" rx="9" ry="17" fill="url(#rg)"/>
+            <path id="sw" d="M-4 -20q4-9 8 0q-1 7-8 3" fill="none" stroke="#5a0a1a" stroke-width="1.4" stroke-linecap="round"/>
+          </g>
+        </g>
+      </svg>
+    </button>
+  </div>
+  <div id="dots" aria-hidden="true"></div>
+  <p id="hint">Toca la planta</p>
+</section>
+<div id="veil" aria-hidden="true"></div>
+
+<!-- ETAPA 2 -->
+<main id="main" hidden>
+  <header class="hero">
+    <h1 class="rv">Para mi niña, mi Abejita ❤️</h1>
+    <p class="sub rv">Feliz otro mes, mi amor.</p>
+    <div class="ph rv"><img src="assets/photos/35013.jpg" alt="Tú, con falda blanca, bajo los árboles"></div>
+    <a class="down" href="#historia" aria-label="Seguir bajando">↓</a>
+  </header>
+
+  <section id="historia" class="sec">
+    <h2 class="rv">Un poquito de nosotros ❤️</h2>
+    <div id="gal" class="gal"></div>
+  </section>
+
+  <section class="sec letter-sec">
+    <div id="letter" class="paper"></div>
+  </section>
+
+  <section class="sec">
+    <h2 class="rv">Pequeñas cosas que amo de ti</h2>
+    <div id="cards" class="cards"></div>
+  </section>
+
+  <section class="sec spicy">
+    <h2 class="rv">Y sí... también me vuelves loco. 😏❤️</h2>
+    <p class="rv">Porque además de adorarte, también me encantas.</p>
+    <p class="rv">Me encanta mirarte, me encanta cuando te arreglas, cuando me mandas una foto y me dejas pensando lo preciosa que eres.</p>
+    <p class="rv">Hay momentos en los que simplemente quisiera tenerte aquí conmigo, abrazarte, besarte y no tener ninguna prisa.</p>
+    <p class="rv">Pero incluso cuando me provocas todas esas cosas, hay algo que me gusta todavía más:</p>
+    <p class="rv big">tenerte cerca.</p>
+  </section>
+
+  <section class="sec future">
+    <h2 class="rv">Lo que todavía nos falta vivir ❤️</h2>
+    <svg class="const rv" viewBox="0 0 300 140" aria-hidden="true">
+      <polyline points="20,100 70,60 120,85 175,40 230,70 280,30" fill="none" stroke="#d4af6a" stroke-opacity=".35" stroke-width="1"/>
+      <g fill="#f6e2b0"><circle class="st" cx="20" cy="100" r="3"/><circle class="st" style="animation-delay:.6s" cx="70" cy="60" r="2.5"/><circle class="st" style="animation-delay:1.2s" cx="120" cy="85" r="3"/><circle class="st" style="animation-delay:1.8s" cx="175" cy="40" r="2.5"/><circle class="st" style="animation-delay:2.4s" cx="230" cy="70" r="3"/><circle class="st" style="animation-delay:.3s" cx="280" cy="30" r="4"/></g>
+    </svg>
+    <ul class="chips rv"><li>viajes</li><li>más recuerdos</li><li>más fotografías</li><li>más cumpleaños</li><li>más aniversarios</li><li>más madrugadas</li><li>y quizá, algún día, una familia</li></ul>
+    <p class="rv quote">Si Dios quiere y algún día llegamos a ese momento, estoy seguro de que tendremos un pequeñito precioso.</p>
+  </section>
+
+  <section id="finale">
+    <canvas id="fx2" aria-hidden="true"></canvas>
+    <div class="fin">
+      <img class="f1" src="assets/photos/168080.jpg" alt="Tú, sentada en el parque con la luna de fondo">
+      <h2 class="f2">Te amo, mi Abejita. ❤️</h2>
+      <p class="f3">Gracias por otro mes.</p>
+      <p class="f4">Con amor,<br>tu neito bebé.</p>
+      <div class="heart f5" aria-hidden="true">❤</div>
+      <p class="f6">Si algún día olvidas lo mucho que te amo, vuelve a abrir esta página. ❤️</p>
+      <button id="again" class="f7">Volver a empezar ❤️</button>
+    </div>
+  </section>
+</main>
+
+<script type="text/plain" id="letter-src">
+Mi vida ❤️
+
+Hoy cumplimos otro mes juntos, y aunque pueda parecer simplemente otro número en el calendario, para mí significa mucho más.
+
+Significa otro mes de tenerte en mi vida. Otro mes de escuchar tu voz, de reírme contigo, de extrañarte cuando estamos lejos, de compartir nuestras tonterías, nuestros momentos bonitos, nuestras pequeñas discusiones y todas esas cosas que, poco a poco, se han convertido en parte de nuestra historia.
+
+Y si algo he aprendido contigo es que el amor no siempre se ve como en las películas.
+
+A veces es una llamada a las tres de la mañana.
+A veces es quedarnos hablando hasta que uno de los dos ya no puede mantener los ojos abiertos.
+A veces es mandarnos una foto porque simplemente queremos sentir al otro un poquito más cerca.
+A veces es reírnos de cualquier estupidez.
+Y otras veces es simplemente saber que, aunque estemos a kilómetros de distancia, hay alguien al otro lado de la pantalla que piensa en nosotros.
+
+Tú eres esa persona para mí.
+
+Mi niña preciosa, quiero que sepas que no me enamoré de una versión perfecta de ti.
+
+Me enamoré de ti.
+
+De tu sonrisa.
+De tu mirada.
+De tus gestos.
+De tu forma de hablar.
+De tus ocurrencias.
+De tu carácter.
+De esa manera tan tuya de hacerme reír.
+De cómo puedes ser tierna y malhumorada prácticamente en el mismo día. JAJAJA.
+De todo eso que te hace ser tú.
+
+Y sí, también me encanta esa parte de ti que me vuelve loco físicamente. 😏❤️
+
+Me encanta mirarte. Me encanta cuando te arreglas, cuando te veo en cámara, cuando me mandas una foto que me deja pensando "Dios mío, qué mujer tan preciosa tengo".
+
+Y sí, hay momentos en los que simplemente me dan ganas de tenerte cerquita, abrazarte, besarte y quedarme contigo sin ninguna prisa.
+
+Pero incluso eso se queda pequeño al lado de algo mucho más importante:
+
+Me encanta estar contigo.
+
+Me encanta sentir que puedo ser yo mismo contigo.
+
+Y hay algo que quizá no siempre digo de la manera correcta:
+
+Contigo siento paz.
+
+A veces puedo estar completamente cansado, con sueño, con la cabeza llena de cosas... y simplemente escucharte hace que todo se sienta un poquito más tranquilo.
+
+Como aquella noche en la que literalmente me estaba quedando dormido contigo.
+
+No era aburrimiento.
+
+Era todo lo contrario.
+
+Estaba tan tranquilo y tan a gusto contigo que mi cuerpo simplemente dijo: "Bueno, Mauricio, ya podemos dormir." JAJAJA. ❤️
+
+Y eso es algo que valoro muchísimo.
+
+Porque quiero que nuestra relación sea eso también:
+
+Un lugar donde podamos reírnos, hablar, molestarnos, reconciliarnos, ser cursis, hacer tonterías, tener nuestros momentos íntimos, extrañarnos y volver a encontrarnos.
+
+No quiero que tengas que ser perfecta conmigo.
+
+Quiero a mi Abejita.
+
+La que se ríe.
+La que se enoja.
+La que se pone sensible.
+La que tiene días buenos y días malos.
+La que quiere cariño y también necesita su espacio.
+La que a veces me vuelve loco. 😂
+La que me hace decir "¿cómo demonios puedo querer tanto a esta mujer?"
+
+Y quiero que tú también puedas quererme así.
+
+Con mis virtudes, mis defectos, mi intensidad, mis momentos de cursilería extrema y todas mis tonterías. JAJAJA.
+
+Porque no quiero que lo nuestro sea perfecto.
+
+Quiero que sea nuestro.
+
+Y si algún día la vida nos permite llegar a momentos todavía más grandes juntos...
+
+Quién sabe.
+
+Quizá algún día tengamos esa familia que alguna vez imaginamos. ❤️
+
+Y si Dios quiere que ese día llegue, estoy seguro de que cuando tengamos a nuestro pequeñito en brazos vamos a mirarlo y pensar:
+
+"¿Cómo hicimos algo tan precioso?"
+
+Aunque probablemente terminemos discutiendo sobre si heredó mis ojos o los tuyos. JAJAJA. 🥺❤️
+
+Pero eso será algún día.
+
+Hoy solamente quiero disfrutar de esto.
+
+De nosotros.
+
+De cada recuerdo que hemos creado.
+
+De cada foto.
+
+De cada llamada.
+
+De cada madrugada.
+
+De cada "te amo".
+
+De cada "buenos días".
+
+De cada "ya llegué".
+
+De cada momento en el que, aunque sea por una pantalla, hemos conseguido sentirnos un poquito más cerca.
+
+Y quiero que cuando recorras esta pequeña página recuerdes algo:
+
+Cada imagen es un pedacito de nuestra historia.
+
+Y cada palabra que encuentres aquí tiene una intención muy sencilla:
+
+Recordarte cuánto te amo.
+
+Gracias por estar.
+
+Gracias por acompañarme.
+
+Gracias por ser tú.
+
+Y gracias por dejarme formar parte de tu vida.
+
+Te amo muchísimo, mi niña preciosa.
+
+Más de lo que probablemente puedo explicar en una página.
+
+Pero hice el intento.
+
+Porque tú mereces que de vez en cuando te recuerde lo especial que eres para mí.
+
+Feliz otro mes, mi Abejita. 🐝❤️
+
+Con amor,
+tu neito bebé.
+</script>
+<script src="script.js"></script>
+</body>
+</html>
